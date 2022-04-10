@@ -1,6 +1,10 @@
 import React ,{ useState } from "react";
 import Header from "../../components/header/Header";
 import axios from "axios";
+import { HomeImg, ImgDiv, MainContainer, RecipeCard } from "./HomeStyles";
+import homeSvg from "../../assets/home.svg";
+import RecipeCardComp from "./RecipeCardComp";
+
 
 const APP_ID = "cf9b1911";
 const APP_KEY = "595aeb2b3a15df30d34b8d8aa5c2cb7b";
@@ -21,15 +25,29 @@ const Home = () => {
       const result = await axios.get(url);
       setFood(result.data.hits);
     } else {
-      console.log("Lütfen formu doldurun");
+      console.log("Please fill the form");
     }
   }
-
-  return <Header setQuery={setQuery}
+console.log(food);
+  return (
+    <div>
+    <Header setQuery={setQuery}
                 getData={getData}
                 mealTypes={mealTypes}
                 setMeal={setMeal}
-    />;
-};
+    />
+    {food ? (
+      <MainContainer>
+        {food.map((liste , index) => (
+          <RecipeCardComp key={index} recipe1={liste.recipe} />
+        ) )}
+      </MainContainer>
+    ) : (
+      <ImgDiv>
+        <HomeImg src={homeSvg} />
+      </ImgDiv>
+    )}
+  </div>
+  )};
 
 export default Home;
