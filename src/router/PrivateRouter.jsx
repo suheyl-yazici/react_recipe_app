@@ -1,9 +1,11 @@
-
+import { Navigate, Outlet } from 'react-router-dom';
 import React from 'react'
 
 const PrivateRouter = () => {
+  const user = JSON.parse(sessionStorage.getItem("user"));
+
   return (
-    <div>PrivateRouter</div>
+    user ? <Outlet /> : <Navigate to="/" />
   )
 }
 

@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState  } from "react";
 import { Nav, Logo, Hamburger,Menu, MenuLink } from "./NavbarStyles";
-// import {GiHamburgerMenu} from "react-icons/gi";
-
 
 const Navbar = () => {
 
 const [isOpen, setIsOpen] = useState(false);
+const [github, setGithub] = useState("");
 
   return (
     <Nav>
@@ -17,12 +16,13 @@ const [isOpen, setIsOpen] = useState(false);
         <span />
         <span />
         <span />
-        {/* <GiHamburgerMenu /> */} {/* spanlarla aynı işlemi yapıyorlar */}
       </Hamburger>
       <Menu isOpen = {isOpen} >
         <MenuLink to="/about" onClick={() => setIsOpen(!isOpen)}>About</MenuLink>
-        <MenuLink to="/github">Github</MenuLink>
-        <MenuLink to="/" onClick={() => setIsOpen(!isOpen)}>Logout</MenuLink>
+        <MenuLink onClick={() => setGithub(
+          (window.location.href = "https://github.com/suheyl-yazici")
+        )} to={github} target="_blank" >Github</MenuLink>
+        <MenuLink to="/" onClick={() => setIsOpen(!isOpen)} onMouseUp={() => sessionStorage.clear()}>Logout</MenuLink>
       </Menu>
     </Nav>
   );

@@ -17,7 +17,7 @@ console.log(recipe);
         </HeaderContainer>
         <DetailPart>
           <OtherPart>
-              <>Nutriens</>
+              <>NUTRIENTS</>
               <p>
                 {recipe.totalNutrients.CA.label} :
                 {Math.round(recipe.totalNutrients.CA.quantity)}

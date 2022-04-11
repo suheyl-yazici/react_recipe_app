@@ -16,8 +16,6 @@ const Home = () => {
   const mealTypes = ["Breakfast","Lunch","Dinner","Snack","Teatime"];
   const [meal, setMeal] = useState(mealTypes[0].toLowerCase());
 
-
-
   const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${meal}`;
 
   const getData = async() => {
@@ -28,7 +26,7 @@ const Home = () => {
       console.log("Please fill the form");
     }
   }
-console.log(food);
+
   return (
     <div>
     <Header setQuery={setQuery}
