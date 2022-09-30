@@ -19,7 +19,7 @@ const Login = () => {
     <LoginContainer>
       <FormContainer>
         <StyledImg src={mealSvg} />
-        <Header>{"<Clarusway/>"}Recipe</Header>
+        <Header>{"<SüheyL/>"}Recipe</Header>
         <StyledForm onSubmit={handleSubmit}>
           <StyledInput type="text" placeholder='Username' required/>
           <StyledInput type="password" placeholder='password' required />

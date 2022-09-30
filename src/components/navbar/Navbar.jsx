@@ -9,7 +9,7 @@ const [github, setGithub] = useState("");
   return (
     <Nav>
       <Logo to="/home" onClick={() => setIsOpen(false)}>
-        <i>{"<Clarusway>"}</i>
+        <i>{"<SüheyL>"}</i>
         <span>recipe</span>
       </Logo>
       <Hamburger onClick={() => setIsOpen(!isOpen)}>
